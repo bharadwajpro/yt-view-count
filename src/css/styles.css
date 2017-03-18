@@ -1,0 +1,13 @@
+.video-info{
+    padding: 20px;
+    margin: 30px;
+}
+
+.video-info img{
+    float: left;
+    margin-right: 20px;
+}
+
+.video-info h2,h4{
+    color: #317eac;
+}
