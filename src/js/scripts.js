@@ -12,7 +12,7 @@ class Layout extends React.Component{
 		}
 		return vl_arr;
 	}
-	
+
 	render(){
 		return(
 			<div>
@@ -24,4 +24,4 @@ class Layout extends React.Component{
 
 const app = document.getElementById('app');
 
-ReactDOM.render(<Layout video_id={['qD-6d8Wo3do', 'G62HrubdD6o', 'G0T2B5DBy1w']}/>, app);
+ReactDOM.render(<Layout video_id={['qD-6d8Wo3do', 'G62HrubdD6o', 'X4hEii_WRPA']}/>, app);
