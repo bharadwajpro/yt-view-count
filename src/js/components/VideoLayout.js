@@ -50,13 +50,14 @@ export default class VideoLayout extends React.Component{
               video_id: vid
             });
         }.bind(this));
+        console.log("views updated at ", new Date());
     }
 
     render(){
 		return(
             <div className="video-info">
                 <img src={this.state.video_thumbnail} alt="thumbnail"/>
-                <h3>{this.state.video_title}</h3>
+                <h3><a href={"https://youtube.com/watch?v="+this.state.video_id}>{this.state.video_title}</a></h3>
                 <h4>{this.state.video_views}</h4>
             </div>
 		);
