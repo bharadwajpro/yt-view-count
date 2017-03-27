@@ -4,9 +4,9 @@
   "description": "Live Youtube Video Count",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --inline --hot",
+    "dev": "./node_modules/.bin/webpack-dev-server --inline --hot --content-base ./src --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js;./node_modules/.bin/webpack-dev-server --inline --hot"
+    "start": "node app.js"
   },
   "author": "Krishna Bharadwaj",
   "license": "ISC",
@@ -29,10 +29,5 @@
     "request": "^2.81.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.2"
-  },
-  "devDependencies": {
-    "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.1",
-    "babel-plugin-transform-react-jsx": "^6.23.0"
   }
 }

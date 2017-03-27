@@ -7,7 +7,7 @@ class Layout extends React.Component{
 		var vl_arr = [];
 		for(var x=0; x<id_arr.length; x++){
 			vl_arr.push(
-				<VideoLayout vid={id_arr[x]}/>
+				<VideoLayout vid={id_arr[x]} key={id_arr[x]}/>
 			);
 		}
 		return vl_arr;
@@ -24,4 +24,4 @@ class Layout extends React.Component{
 
 const app = document.getElementById('app');
 
-ReactDOM.render(<Layout video_id={['qD-6d8Wo3do', 'G62HrubdD6o', 'X4hEii_WRPA']}/>, app);
+ReactDOM.render(<Layout video_id={['qD-6d8Wo3do', 'G62HrubdD6o', 'XpAaOER_6iY', '-gqmAr3isc8', 'YA48dqwrunE']}/>, app);

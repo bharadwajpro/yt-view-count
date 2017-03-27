@@ -4,12 +4,24 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+//Setting up Webpack for Node.js
+var webpack = require("webpack");
+var webpack_config = require('./webpack.config');
+var compiler = webpack(webpack_config);
+
+compiler.watch({ // watch options:
+    aggregateTimeout: 300, // wait so long for more changes
+}, function(err, stats) {
+    if(err) console.log('Webpack error occured');
+    else console.log(stats.toString({colors: true}));
+});
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
-
+app.use(express.static('src'))
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -34,8 +46,13 @@ function parseData(id, callback) {
 }
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+  res.sendFile('index.html', function (err) {
+      if(err){
+          console.log('Error sending / ', err);
+      }
+      console.log('Sent index.html');
+  });
+});
 
 app.post('/video', (req, res) => {
     var data = req.body;
@@ -50,6 +67,6 @@ app.post('/video', (req, res) => {
     });
 });
 
-app.listen(process.env.OPENSHIFT_NODEJS_PORT || 3000, function(){
-    console.log("Server started on port 3000");
+app.listen(process.env.PORT || 8081, function(){
+    console.log("Server started on port ", process.env.PORT || 8081);
 });
