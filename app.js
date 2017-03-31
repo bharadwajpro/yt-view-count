@@ -54,6 +54,15 @@ app.get('/', function (req, res) {
   });
 });
 
+app.get('/googleac87b1d2968e5435.html', function (req, res) {
+  res.sendFile('googleac87b1d2968e5435.html', function (err) {
+      if(err){
+          console.log('Error sending / ', err);
+      }
+      console.log('Sent googleac87b1d2968e5435.html');
+  });
+});
+
 app.post('/video', (req, res) => {
     var data = req.body;
     var vid = data['vid'];
